@@ -1,16 +1,28 @@
-## Hi there 👋
+# 👋 Hi, I'm Zaid!
 
-<!--
-**PathanZ/Pathanz** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+🎓 MSc in Cybersecurity | 🛡️ Offensive Security Enthusiast  
+🇨🇦 Based in British Columbia, Canada  
+🔍 Focus: Penetration Testing | SOC | Threat Detection | Cloud Security  
 
-Here are some ideas to get you started:
+---
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+### 🔧 Skills & Tools
+- 🐧 Linux, Kali, Ubuntu, Parrot OS
+- 🧰 Tools: Burp Suite, Metasploit, Wireshark, Nmap, Nessus
+- 📜 Certifications: Security+, A+, ISC2 CC, AWS Cloud Security
+- 🖥️ Languages: Python, Bash, SQL, C/C++
+
+---
+
+### 🧪 Featured Projects
+- 🔐 [API Performance Benchmarking](#): Comparative study of REST APIs using performance metrics
+- 🎯 [CTF Writeups](#): HackTheBox, MetaCTF, and custom labs
+- 🛠️ [Python AutoRecon](#): Custom scripts to automate vulnerability scanning
+
+---
+
+### 📫 Reach Me At
+- [LinkedIn](https://www.linkedin.com/in/mohammedzaid-pathan/)
+- 📧 pathanzaid3746@gmail.com
+
+> _“You can’t secure the unknown.”_
