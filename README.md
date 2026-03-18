@@ -44,12 +44,12 @@ Security professional with an MSc in Cybersecurity, focused on **threat detectio
 ## 🧪 Featured Projects
 
 ### 🏠 [Mini SOC Home Lab](https://github.com/PathanZ/mini-home-soc)
-> Built a fully functional SOC environment using Elastic SIEM and Wazuh
+> Built a lightweight SOC using a repurposed Android phone as a 24/7 network sensor
 
-- Deployed agents on Windows and Linux endpoints for real-time log collection
-- Created custom detection rules and dashboards for threat visibility
-- Simulated attacks using Metasploit to validate alerting pipelines
-- **Stack:** Elastic Stack · Wazuh · VirtualBox · Python
+- Deployed on a ZTE Blade L210 (256MB RAM) running Termux — no cloud, no VM
+- Built Bash scripts for device discovery, port scanning, device fingerprinting and hourly reporting
+- Served a live dark-theme dashboard over zero-trust Tailscale/WireGuard network
+- **Stack:** Android · Termux · Bash · Nmap · Python · Tailscale
 
 ---
 
