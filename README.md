@@ -43,7 +43,7 @@ Security professional with an MSc in Cybersecurity, focused on **threat detectio
 
 ## 🧪 Featured Projects
 
-### 🏠 [Mini SOC Home Lab](https://github.com/PathanZ/mini-soc-home-lab)
+### 🏠 [Mini SOC Home Lab](https://github.com/PathanZ/mini-home-soc)
 > Built a fully functional SOC environment using Elastic SIEM and Wazuh
 
 - Deployed agents on Windows and Linux endpoints for real-time log collection
