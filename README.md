@@ -26,7 +26,6 @@ Security professional with an **MSc in Cybersecurity**, focused on **threat dete
 
 - 🔍 Currently building a **SOC home lab series** — from SIEM setup to threat intelligence automation
 - 🎯 Interests: **Threat Hunting · IOC Analysis · Web App Pentesting · Cloud Security**
-- 📜 Certifications: **Security+** · **A+** · **ISC2 CC** · **AWS Cloud Security**
 - 📍 British Columbia, Canada 🇨🇦
 - 📫 Reach me at: **pathanzaid3746@gmail.com**
 
