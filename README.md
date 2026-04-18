@@ -98,10 +98,11 @@ Offensive security practitioner with an **MSc in Cybersecurity**, focused on **w
 
 ![Security+](https://img.shields.io/badge/CompTIA_Security%2B-FF0000?style=for-the-badge&logo=comptia&logoColor=white)
 ![A+](https://img.shields.io/badge/CompTIA_A%2B-FF0000?style=for-the-badge&logo=comptia&logoColor=white)
+![Web App Pentest](https://img.shields.io/badge/Foundations_Web_App_Pentesting-Kairos_Sec-8A2BE2?style=for-the-badge&logoColor=white)
 ![ISC2 CC](https://img.shields.io/badge/ISC2_CC-006400?style=for-the-badge&logoColor=white)
 ![AWS](https://img.shields.io/badge/AWS_Cloud_Security-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)
 ![Attack Surface](https://img.shields.io/badge/Attack_Surface_Management-222222?style=for-the-badge&logoColor=white)
-![Web App Pentest](https://img.shields.io/badge/Foundations_Web_App_Pentesting-Kairos_Sec-8A2BE2?style=for-the-badge&logoColor=white)
+
 
 ---
 
