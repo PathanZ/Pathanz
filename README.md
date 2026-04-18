@@ -1,133 +1,113 @@
-<div align="center">
-  <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDBmczlpcWZpOHg4MmN6b3R0NGp5MnA5cmdk NXAxNWVzbWVteCZlPDIyMV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/qgQUggAC3Pfv687qPC/giphy.gif" width="600" height="200"/>
-</div>
+# 💀 Zaid Pathan — Penetration Tester & Offensive Security Practitioner
 
-<h1 align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=28&pause=1000&color=00FF41&center=true&vCenter=true&width=600&lines=Hey%2C+I'm+Zaid+%F0%9F%91%8B;SOC+Analyst+%7C+Penetration+Tester;MSc+Cybersecurity+%F0%9F%94%90" alt="Typing SVG" />
-</h1>
-
-<p align="center">
-  <a href="https://www.linkedin.com/in/mohammedzaid-pathan/">
-    <img src="https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&label=&color=0077B5&logoColor=white&labelColor=&style=for-the-badge" height="28"/>
-  </a>
-  <a href="mailto:pathanzaid3746@gmail.com">
-    <img src="https://img.shields.io/static/v1?message=Gmail&logo=gmail&label=&color=D14836&logoColor=white&labelColor=&style=for-the-badge" height="28"/>
-  </a>
-  <a href="https://github.com/PathanZ">
-    <img src="https://img.shields.io/static/v1?message=GitHub&logo=github&label=&color=181717&logoColor=white&labelColor=&style=for-the-badge" height="28"/>
-  </a>
-</p>
+[![LinkedIn](https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&label=&color=0077B5&logoColor=white&labelColor=&style=for-the-badge)](https://www.linkedin.com/in/mohammedzaid-pathan/)
+[![Gmail](https://img.shields.io/static/v1?message=Gmail&logo=gmail&label=&color=D14836&logoColor=white&labelColor=&style=for-the-badge)](mailto:pathanzaid3746@gmail.com)
+[![GitHub](https://img.shields.io/static/v1?message=GitHub&logo=github&label=&color=181717&logoColor=white&labelColor=&style=for-the-badge)](https://github.com/PathanZ)
 
 ---
 
-## 👨‍💻 About Me 🚀
+## 👨‍💻 About Me
 
-Security professional with an **MSc in Cybersecurity**, focused on **threat detection, SOC operations, and offensive security**. I build practical home lab projects that simulate real-world SOC workflows and penetration testing scenarios.
+Offensive security practitioner with an **MSc in Cybersecurity**, focused on **web application penetration testing, vulnerability exploitation, and adversarial simulation**. I find what defenders miss — then document it like a professional.
 
-- 🔍 Currently building a **SOC home lab series** — from SIEM setup to threat intelligence automation
-- 🎯 Interests: **Threat Hunting · IOC Analysis · Web App Pentesting · Cloud Security**
-- 📍 British Columbia, Canada 🇨🇦
-- 📫 Reach me at: **pathanzaid3746@gmail.com**
+- 🔓 Currently: Web App Pentesting · OWASP Top 10 · Manual Exploitation & Reporting
+- 🎯 Dual track: **Penetration Tester** + **SOC Analyst**
+- 🏆 Top 10 — CyberSci Regionals Vancouver 2024
+- 📍 Surrey, British Columbia, Canada 🇨🇦
 
-**Obsessed with** 🔥
-
-- 🛡️ Defending systems
-- 🕵️ Hunting threats
-- 💻 Breaking things (ethically)
-- 🤖 Automating security workflows
-- ☁️ Cloud security
+> *"You can't secure what you haven't tried to break."*
 
 ---
 
-## 🛠️ Skills & Tools
+## 🛠️ Offensive Toolkit
 
-<p align="left">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="45" height="45" alt="Python"/>
-  &nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" width="45" height="45" alt="Bash"/>
-  &nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" width="45" height="45" alt="C"/>
-  &nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" width="45" height="45" alt="C++"/>
-  &nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="45" height="45" alt="SQL"/>
-  &nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" width="45" height="45" alt="Linux"/>
-  &nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-line-wordmark.svg" width="45" height="45" alt="AWS"/>
-  &nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-plain-wordmark.svg" width="45" height="45" alt="Docker"/>
-  &nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="45" height="45" alt="Git"/>
-  &nbsp;
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="45" height="45" alt="GitHub"/>
-</p>
-
-| Category | Tools |
-|---|---|
-| **SIEM & Monitoring** | Splunk · Elastic Stack · Wazuh |
+| Category | Tools & Tech |
+| --- | --- |
+| **Web App Pentesting** | Burp Suite · Caido · SQLMap · Gobuster · ffuf |
+| **Exploitation** | Metasploit · Manual SQLi · RCE · File Upload Bypass · SSTI |
+| **Recon** | Nmap · Nessus · Wireshark · OSINT techniques |
+| **SIEM & Detection** | Wazuh · Splunk · Elastic Stack |
 | **Threat Intelligence** | OTX AlienVault · VirusTotal · AbuseIPDB |
-| **Pentesting** | Burp Suite · Metasploit · Nmap · Nessus · Wireshark |
 | **Languages** | Python · Bash · SQL · C/C++ |
-| **Platforms** | Kali Linux · Ubuntu · Parrot OS · AWS |
+| **Platforms** | Kali Linux · Parrot OS · Ubuntu · AWS |
 
 ---
 
 ## 🧪 Featured Projects
 
-### 🏠 [Mini SOC Home Lab](https://github.com/PathanZ/mini-home-soc)
-> Built a lightweight SOC using a repurposed Android phone as a 24/7 network sensor
+### 🔓 [Web App Pentest Report — HackSmarter](https://github.com/PathanZ/web-pentest-report-hacksmarter)
+> Grey-box pentest of a purposely vulnerable web application · *Foundations of Web App Pentesting — Kairos Sec / Hack Smarter Labs*
 
-- Deployed on a ZTE Blade L210 (256MB RAM) running Termux — no cloud, no VM
-- Built Bash scripts for device discovery, port scanning, device fingerprinting and hourly reporting
-- Served a live dark-theme dashboard over zero-trust Tailscale/WireGuard network
+- Identified **26 vulnerabilities** across authentication, authorization, server-side, and client-side attack surfaces
+- **Techniques:** UNION-based SQLi · SQLMap · OS Command Injection · SSTI · SSRF · Path Traversal · File Upload → RCE · IDOR · Broken Access Control · Mass Assignment · Stored/Reflected XSS · CSRF · Clickjacking · CORS Misconfiguration · Open Redirect
+- Produced a professional pentest report with full reproduction steps, impact ratings, and remediation guidance
+- **Stack:** `Burp Suite` `Caido` `SQLMap` `Python` `SysReptor`
+
+---
+
+### 🤖 [AI-Assisted Vulnerability Triage Tool](https://github.com/PathanZ/ai-vuln-triage)
+> Automated triage pipeline combining Nmap output with AI-powered NIST 800-53 mapping
+
+- Parses Nmap XML scan output and maps findings to NIST 800-53 controls automatically
+- Scores AI confidence per finding and generates analyst-ready HTML/JSON/CSV reports
+- Powered by Google Gemini API (gemini-1.5-flash)
+- **Stack:** `Python` `Google Gemini API` `Nmap` `NIST 800-53` `HTML Reporting`
+
+---
+
+### 🏠 [Mini SOC Home Lab](https://github.com/PathanZ/mini-home-soc)
+> Lightweight 24/7 SOC sensor on a repurposed Android phone — no cloud, no VM
+
+- Deployed on a ZTE Blade L210 (256MB RAM) running Termux
+- Built Bash scripts for device discovery, port scanning, fingerprinting, and hourly reporting
+- Live dark-theme dashboard served over zero-trust Tailscale/WireGuard network
 - **Stack:** `Android` `Termux` `Bash` `Nmap` `Python` `Tailscale`
 
 ---
 
 ### 🔍 [Threat Intelligence Feed Integrator](https://github.com/PathanZ/threat-intel-feed-integrator)
-> Python-based IOC enrichment pipeline querying 3 live threat feeds
+> IOC enrichment pipeline querying 3 live threat intelligence feeds
 
 - Integrated OTX AlienVault, VirusTotal, and AbuseIPDB APIs
-- Implemented weighted scoring model (0–100) to classify IOCs as malicious, suspicious, or clean
-- Generated analyst-ready HTML reports to reduce manual triage effort
+- Weighted scoring model (0–100) classifying IOCs as malicious, suspicious, or clean
+- Outputs analyst-ready HTML reports to cut manual triage time
 - **Stack:** `Python` `REST APIs` `JSON` `HTML Reporting`
 
 ---
 
-### 🤖 [Python AutoRecon](https://github.com/PathanZ/python-autorecon)
-> Custom automation scripts for vulnerability scanning and reconnaissance
+### 🛰️ [Python AutoRecon](https://github.com/PathanZ/python-autorecon)
+> 7-module automated reconnaissance framework
 
-- Automated multi-stage recon workflows reducing manual effort
-- Integrated with common pentesting tools for streamlined output
+- Automated multi-stage external recon workflows
+- Modular design with AI triage integration via Gemini API
 - **Stack:** `Python` `Bash` `Nmap` `Nessus`
 
 ---
 
-## 📊 GitHub Stats 🔥
+## 🏆 CTF & Competitions
 
-<p align="center">
-  <img src="https://streak-stats.demolab.com?user=PathanZ&locale=en&mode=daily&theme=dark&hide_border=false&border_radius=5&order=3" width="49%" alt="streak graph"/>
-</p>
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=PathanZ&show_icons=true&theme=dark&hide_border=true&count_private=true" width="48%"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=PathanZ&layout=compact&theme=dark&hide_border=true" width="40%"/>
-</p>
+| Event | Result |
+| --- | --- |
+| CyberSci Regionals Vancouver 2024 | 🥇 Top 10 |
+| HackTheBox University CTF | ✅ Competed |
+| MetaCTF 2023 & 2024 | ✅ Competed |
 
 ---
 
-## 🏆 Certifications
+## 📜 Certifications
 
-<p>
-  <img src="https://img.shields.io/badge/CompTIA_Security%2B-FF0000?style=for-the-badge&logo=comptia&logoColor=white"/>
-  <img src="https://img.shields.io/badge/CompTIA_A%2B-FF0000?style=for-the-badge&logo=comptia&logoColor=white"/>
-  <img src="https://img.shields.io/badge/ISC2_CC-006400?style=for-the-badge&logoColor=white"/>
-  <img src="https://img.shields.io/badge/AWS_Cloud_Security-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white"/>
-</p>
+![Security+](https://img.shields.io/badge/CompTIA_Security%2B-FF0000?style=for-the-badge&logo=comptia&logoColor=white)
+![A+](https://img.shields.io/badge/CompTIA_A%2B-FF0000?style=for-the-badge&logo=comptia&logoColor=white)
+![ISC2 CC](https://img.shields.io/badge/ISC2_CC-006400?style=for-the-badge&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS_Cloud_Security-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)
+![Attack Surface](https://img.shields.io/badge/Attack_Surface_Management-222222?style=for-the-badge&logoColor=white)
+![Web App Pentest](https://img.shields.io/badge/Foundations_Web_App_Pentesting-Kairos_Sec-8A2BE2?style=for-the-badge&logoColor=white)
 
 ---
 
-<p align="center">
-  <i>"You can't secure the unknown."</i>
-</p>
+## 📊 GitHub Stats
+
+[![streak](https://streak-stats.demolab.com?user=PathanZ&locale=en&mode=daily&theme=dark&hide_border=false&border_radius=5&order=3)](https://git.io/streak-stats)
+
+[![stats](https://github-readme-stats.vercel.app/api?username=PathanZ&show_icons=true&theme=dark&hide_border=true&count_private=true)](https://github.com/PathanZ)
+[![top langs](https://github-readme-stats.vercel.app/api/top-langs/?username=PathanZ&layout=compact&theme=dark&hide_border=true)](https://github.com/PathanZ)
