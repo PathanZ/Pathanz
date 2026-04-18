@@ -22,6 +22,14 @@ zaid@kali:~/github/Pathanz $ whoami
 
 ---
 
+## `// terminal`
+
+[![launch terminal](https://img.shields.io/badge/launch_interactive_terminal-0d1117?style=for-the-badge&logo=gnubash&logoColor=3fb950)](https://pathanZ.github.io/Pathanz/)
+
+> Run `help` to see all commands
+
+---
+
 ## `// about`
 
 Offensive security practitioner with an **MSc in Cybersecurity**. I find what defenders miss — then document it like a professional.
