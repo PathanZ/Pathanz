@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zaid Pathan — Portfolio Terminal</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    background: #0d1117;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'Cascadia Code', 'Fira Code', 'JetBrains Mono', 'Courier New', monospace;
+    padding: 20px;
+  }
+  .container { width: 100%; max-width: 780px; }
+  .term-wrap {
+    background: #0d1117;
+    border-radius: 12px;
+    border: 1px solid #30363d;
+    overflow: hidden;
+    box-shadow: 0 0 0 1px #21262d, 0 20px 60px rgba(0,0,0,0.6);
+  }
+  .term-bar {
+    background: #161b22;
+    border-bottom: 1px solid #30363d;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .dot { width: 13px; height: 13px; border-radius: 50%; }
+  .dot-r { background: #ff5f57; }
+  .dot-y { background: #febc2e; }
+  .dot-g { background: #28c840; }
+  .term-title { flex: 1; text-align: center; font-size: 12px; color: #484f58; letter-spacing: 0.3px; }
+  .term-body { padding: 16px 18px; min-height: 480px; display: flex; flex-direction: column; }
+  .output { flex: 1; overflow-y: auto; margin-bottom: 12px; max-height: 560px; }
+  .output::-webkit-scrollbar { width: 4px; }
+  .output::-webkit-scrollbar-track { background: transparent; }
+  .output::-webkit-scrollbar-thumb { background: #30363d; border-radius: 2px; }
+  .line { font-size: 13.5px; line-height: 1.65; white-space: pre-wrap; word-break: break-all; }
+  .line.prompt-line { color: #58a6ff; }
+  .line.green  { color: #3fb950; }
+  .line.yellow { color: #e3b341; }
+  .line.red    { color: #f85149; }
+  .line.cyan   { color: #39d353; }
+  .line.muted  { color: #484f58; }
+  .line.white  { color: #e6edf3; }
+  .line.purple { color: #bc8cff; }
+  .line.orange { color: #d29922; }
+  .ls-grid { display: flex; flex-wrap: wrap; gap: 6px 22px; margin: 4px 0; }
+  .ls-item { font-size: 13.5px; line-height: 1.65; }
+  .ls-dir  { color: #39d353; }
+  .ls-file { color: #e6edf3; }
+  .input-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-top: 1px solid #21262d;
+    padding-top: 12px;
+  }
+  .ps1 { font-size: 13.5px; white-space: nowrap; }
+  .ps1 .user { color: #3fb950; }
+  .ps1 .sep  { color: #484f58; }
+  .ps1 .path { color: #79c0ff; }
+  .ps1 .sym  { color: #e6edf3; }
+  .term-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-size: 13.5px;
+    color: #e6edf3;
+    caret-color: #58a6ff;
+  }
+  .cursor-blink {
+    display: inline-block;
+    width: 8px;
+    height: 15px;
+    background: #58a6ff;
+    animation: blink 1s step-end infinite;
+    vertical-align: text-bottom;
+    margin-left: 1px;
+  }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+  a { color: #58a6ff; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  @media (max-width: 500px) {
+    .line, .ls-item, .ps1, .term-input { font-size: 12px; }
+    .term-body { padding: 12px 12px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="term-wrap" id="termWrap">
+    <div class="term-bar">
+      <div class="dot dot-r"></div>
+      <div class="dot dot-y"></div>
+      <div class="dot dot-g"></div>
+      <span class="term-title" id="termTitle">zaid@kali: ~/portfolio</span>
+    </div>
+    <div class="term-body">
+      <div class="output" id="out"></div>
+      <div class="input-row">
+        <span class="ps1">
+          <span class="user">zaid</span><span class="sep">@</span><span class="user">kali</span><span class="sep">:</span><span class="path" id="cwdSpan">~/portfolio</span><span class="sym"> $ </span>
+        </span>
+        <input class="term-input" id="inp" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" aria-label="terminal input">
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const out      = document.getElementById('out');
+const inp      = document.getElementById('inp');
+const cwdSpan  = document.getElementById('cwdSpan');
+const termTitle= document.getElementById('termTitle');
+
+let history = [], hIdx = -1;
+let currentDir = '~/portfolio';
+
+const dirs = {
+  '~/portfolio':          ['about.txt', 'skills.txt', 'certs.txt', 'ctf.txt', 'contact.txt', 'projects/'],
+  '~/portfolio/projects': ['web-pentest-report.md', 'ai-vuln-triage.md', 'mini-home-soc.md', 'threat-intel.md', 'autorecon.md']
+};
+
+const files = {
+  'about.txt': [
+    ['green',  '┌─[ ABOUT ]─────────────────────────────────────'],
+    ['green',  '│'],
+    ['white',  '│  Name     : Mohammedzaid Pathan (Zaid)'],
+    ['white',  '│  Role     : Penetration Tester & Offensive Security'],
+    ['white',  '│  Degree   : MSc Cybersecurity — NYIT Vancouver'],
+    ['white',  '│  Location : Surrey, BC, Canada 🇨🇦'],
+    ['green',  '│'],
+    ['cyan',   '│  Current focus:'],
+    ['white',  '│    Web App Pentesting · OWASP Top 10'],
+    ['white',  '│    Manual Exploitation & Reporting'],
+    ['white',  '│    Dual track: Pentester + SOC Analyst'],
+    ['green',  '│'],
+    ['yellow', '│  "You can\'t secure what you haven\'t tried to break."'],
+    ['green',  '└────────────────────────────────────────────────'],
+  ],
+  'skills.txt': [
+    ['cyan',   '[web app pentesting]'],
+    ['white',  '  Burp Suite · Caido · SQLMap · ffuf · Gobuster'],
+    ['', ''],
+    ['cyan',   '[exploitation]'],
+    ['white',  '  Metasploit · Manual SQLi · RCE · SSTI · File Upload Bypass'],
+    ['', ''],
+    ['cyan',   '[recon]'],
+    ['white',  '  Nmap · Nessus · Wireshark · OSINT'],
+    ['', ''],
+    ['cyan',   '[detection & siem]'],
+    ['white',  '  Wazuh · Splunk · Elastic Stack · OTX · VirusTotal · AbuseIPDB'],
+    ['', ''],
+    ['cyan',   '[languages]'],
+    ['white',  '  Python · Bash · SQL · C/C++'],
+    ['', ''],
+    ['cyan',   '[platforms]'],
+    ['white',  '  Kali Linux · Parrot OS · Ubuntu · AWS'],
+  ],
+  'certs.txt': [
+    ['yellow', '[certifications]'],
+    ['', ''],
+    ['green',  '  [+] CompTIA Security+'],
+    ['green',  '  [+] CompTIA A+'],
+    ['green',  '  [+] ISC2 CC'],
+    ['green',  '  [+] AWS Cloud Security'],
+    ['green',  '  [+] Attack Surface Management'],
+    ['green',  '  [+] ICS/SCADA Security'],
+    ['green',  '  [+] NIST RMF'],
+    ['green',  '  [+] Foundations of Web App Pentesting — Kairos Sec / Hack Smarter Labs'],
+  ],
+  'ctf.txt': [
+    ['yellow', '[ctf & competitions]'],
+    ['', ''],
+    ['green',  '  [trophy] CyberSci Regionals Vancouver 2024 ......... TOP 10'],
+    ['white',  '  [+]      HackTheBox University CTF ................. Competed'],
+    ['white',  '  [+]      MetaCTF 2023 .............................. Competed'],
+    ['white',  '  [+]      MetaCTF 2024 .............................. Competed'],
+  ],
+  'contact.txt': [
+    ['yellow', '[contact]'],
+    ['', ''],
+    ['cyan',   '  LinkedIn : https://linkedin.com/in/mohammedzaid-pathan'],
+    ['cyan',   '  GitHub   : https://github.com/PathanZ'],
+    ['cyan',   '  Email    : pathanzaid3746@gmail.com'],
+  ],
+  'web-pentest-report.md': [
+    ['yellow', '# web-pentest-report-hacksmarter'],
+    ['muted',  'Grey-box web application pentest — Kairos Sec / Hack Smarter Labs'],
+    ['', ''],
+    ['red',    '  [!] 26 vulnerabilities identified'],
+    ['', ''],
+    ['green',  'attack surface covered:'],
+    ['white',  '  UNION-based SQLi · SQLMap · OS Command Injection'],
+    ['white',  '  SSTI · SSRF · Path Traversal · File Upload → RCE'],
+    ['white',  '  IDOR · Broken Access Control · Mass Assignment'],
+    ['white',  '  Stored XSS · Reflected XSS · CSRF · Clickjacking'],
+    ['white',  '  CORS Misconfiguration · Open Redirect · Auth Bypass'],
+    ['', ''],
+    ['cyan',   'stack   : Burp Suite · Caido · SQLMap · Python · SysReptor'],
+    ['cyan',   'repo    : github.com/PathanZ/web-pentest-report-hacksmarter'],
+  ],
+  'ai-vuln-triage.md': [
+    ['yellow', '# ai-vuln-triage'],
+    ['muted',  'AI-assisted vulnerability triage pipeline'],
+    ['', ''],
+    ['green',  'features:'],
+    ['white',  '  Parses Nmap XML output automatically'],
+    ['white',  '  Maps findings to NIST 800-53 controls'],
+    ['white',  '  Scores AI confidence via Google Gemini API'],
+    ['white',  '  Outputs HTML / JSON / CSV analyst reports'],
+    ['', ''],
+    ['cyan',   'stack   : Python · Gemini API · Nmap · NIST 800-53'],
+    ['cyan',   'repo    : github.com/PathanZ/ai-vuln-triage'],
+  ],
+  'mini-home-soc.md': [
+    ['yellow', '# mini-home-soc'],
+    ['muted',  'Lightweight 24/7 SOC sensor — no cloud, no VM'],
+    ['', ''],
+    ['green',  'features:'],
+    ['white',  '  Hardware : ZTE Blade L210 — 256MB RAM running Termux'],
+    ['white',  '  Scripts  : Device discovery · port scanning · fingerprinting'],
+    ['white',  '  Dashboard: Live dark-theme UI over Tailscale/WireGuard'],
+    ['white',  '  Access   : Remote at 100.108.246.93'],
+    ['', ''],
+    ['cyan',   'stack   : Android · Termux · Bash · Python · Tailscale'],
+    ['cyan',   'repo    : github.com/PathanZ/mini-home-soc'],
+  ],
+  'threat-intel.md': [
+    ['yellow', '# threat-intel-feed-integrator'],
+    ['muted',  'IOC enrichment pipeline — 3 live threat intel feeds'],
+    ['', ''],
+    ['green',  'features:'],
+    ['white',  '  Queries OTX AlienVault · VirusTotal · AbuseIPDB'],
+    ['white',  '  Weighted scoring model 0–100'],
+    ['white',  '  Classifies IOCs: malicious / suspicious / clean'],
+    ['white',  '  Analyst-ready HTML/JSON/CSV reports'],
+    ['', ''],
+    ['cyan',   'stack   : Python · REST APIs · JSON'],
+    ['cyan',   'repo    : github.com/PathanZ/threat-intel-feed-integrator'],
+  ],
+  'autorecon.md': [
+    ['yellow', '# python-autorecon'],
+    ['muted',  '7-module automated recon framework'],
+    ['', ''],
+    ['green',  'modules:'],
+    ['white',  '  Port scanning · Service fingerprinting · DNS recon'],
+    ['white',  '  HTTP enumeration · Subdomain discovery'],
+    ['white',  '  Vulnerability detection · AI triage via Gemini API'],
+    ['', ''],
+    ['cyan',   'stack   : Python · Bash · Nmap · Nessus'],
+    ['cyan',   'repo    : github.com/PathanZ/python-autorecon'],
+  ],
+};
+
+const HELP = [
+  ['green',  'available commands:'],
+  ['', ''],
+  ['yellow', '  whoami    '], ['white', '         show identity'],
+  ['yellow', '  help      '], ['white', '         show this menu'],
+  ['yellow', '  ls        '], ['white', '         list directory contents'],
+  ['yellow', '  cd <dir>  '], ['white', '         change directory  (e.g. cd projects)'],
+  ['yellow', '  cat <file>'], ['white', '         read a file       (e.g. cat about.txt)'],
+  ['yellow', '  pwd       '], ['white', '         print working directory'],
+  ['yellow', '  projects  '], ['white', '         quick overview of all projects'],
+  ['yellow', '  skills    '], ['white', '         show skill stack'],
+  ['yellow', '  contact   '], ['white', '         show contact info'],
+  ['yellow', '  uname     '], ['white', '         system information'],
+  ['yellow', '  history   '], ['white', '         command history'],
+  ['yellow', '  clear     '], ['white', '         clear terminal'],
+  ['', ''],
+  ['muted',  'tip: arrow keys navigate history · tab autocompletes'],
+];
+
+function addLine(cls, text) {
+  const d = document.createElement('div');
+  d.className = 'line ' + (cls || 'white');
+  d.textContent = text ?? '';
+  out.appendChild(d);
+}
+
+function print(lines) {
+  lines.forEach(([cls, text]) => addLine(cls, text));
+  out.scrollTop = out.scrollHeight;
+}
+
+function printPrompt(cmd) {
+  addLine('prompt-line', 'zaid@kali:' + currentDir + ' $ ' + cmd);
+}
+
+function setDir(d) {
+  currentDir = d;
+  cwdSpan.textContent = d;
+  termTitle.textContent = 'zaid@kali: ' + d;
+}
+
+function resolveFile(name) {
+  if (files[name]) return files[name];
+  const base = name.split('/').pop();
+  return files[base] || null;
+}
+
+const tabCandidates = () => {
+  const contents = dirs[currentDir] || [];
+  return contents.map(f => f.replace(/\/$/, ''));
+};
+
+function runCmd(raw) {
+  const cmd = raw.trim();
+  if (!cmd) return;
+  if (history[history.length - 1] !== cmd) history.push(cmd);
+  hIdx = history.length;
+  printPrompt(cmd);
+
+  const parts = cmd.split(/\s+/);
+  const verb  = parts[0].toLowerCase();
+
+  if (verb === 'clear') { out.innerHTML = ''; return; }
+
+  if (verb === 'whoami') {
+    print([
+      ['green',  'zaid'],
+      ['white',  'Penetration Tester | Offensive Security Practitioner'],
+      ['white',  'MSc Cybersecurity — NYIT Vancouver'],
+      ['muted',  'Surrey, BC, Canada'],
+    ]);
+
+  } else if (verb === 'help') {
+    print(HELP);
+
+  } else if (verb === 'pwd') {
+    print([['white', currentDir.replace('~', '/home/zaid')]]);
+
+  } else if (verb === 'uname') {
+    print([
+      ['white', 'Linux kali 6.1.0-kali9-amd64 #1 SMP PREEMPT_DYNAMIC Debian GNU/Linux'],
+      ['white', 'Arch: x86_64  |  Shell: zsh  |  User: zaid  |  Uptime: always'],
+    ]);
+
+  } else if (verb === 'ls') {
+    const contents = dirs[currentDir] || [];
+    if (!contents.length) { addLine('muted', '(empty)'); return; }
+    const grid = document.createElement('div');
+    grid.className = 'ls-grid';
+    contents.forEach(f => {
+      const s = document.createElement('span');
+      s.className = 'ls-item ' + (f.endsWith('/') ? 'ls-dir' : 'ls-file');
+      s.textContent = f;
+      grid.appendChild(s);
+    });
+    out.appendChild(grid);
+    out.scrollTop = out.scrollHeight;
+
+  } else if (verb === 'cd') {
+    const arg = (parts[1] || '~').replace(/\/$/, '');
+    if (arg === '..' || arg === '~' || arg === '') {
+      setDir('~/portfolio');
+    } else if ((arg === 'projects') && currentDir === '~/portfolio') {
+      setDir('~/portfolio/projects');
+    } else if (arg === '~/portfolio' || arg === '/home/zaid/portfolio') {
+      setDir('~/portfolio');
+    } else {
+      print([['red', 'bash: cd: ' + arg + ': No such file or directory']]);
+    }
+
+  } else if (verb === 'cat') {
+    const fname = parts[1];
+    if (!fname) { print([['red', 'usage: cat <filename>']]); return; }
+    const content = resolveFile(fname);
+    if (content) { print(content); }
+    else { print([['red', 'cat: ' + fname + ': No such file or directory']]); }
+
+  } else if (verb === 'projects') {
+    print([
+      ['yellow', '[projects]'],
+      ['', ''],
+      ['green',  '  web-pentest-report-hacksmarter'],
+      ['white',  '    26 vulns · SQLi · RCE · SSTI · SSRF · XSS · CSRF'],
+      ['', ''],
+      ['green',  '  ai-vuln-triage'],
+      ['white',  '    Nmap XML → NIST 800-53 → Gemini AI scoring → reports'],
+      ['', ''],
+      ['green',  '  mini-home-soc'],
+      ['white',  '    Android phone SOC sensor + Tailscale dashboard'],
+      ['', ''],
+      ['green',  '  threat-intel-feed-integrator'],
+      ['white',  '    OTX + VirusTotal + AbuseIPDB IOC pipeline'],
+      ['', ''],
+      ['green',  '  python-autorecon'],
+      ['white',  '    7-module recon framework with AI triage'],
+      ['', ''],
+      ['muted',  'tip: cd projects && ls && cat <file>.md'],
+    ]);
+
+  } else if (verb === 'skills') {
+    print(files['skills.txt']);
+
+  } else if (verb === 'contact') {
+    print(files['contact.txt']);
+
+  } else if (verb === 'history') {
+    if (!history.length) { print([['muted', '(no history)']]); return; }
+    history.forEach((h, i) => addLine('muted', '  ' + String(i + 1).padStart(3) + '  ' + h));
+    out.scrollTop = out.scrollHeight;
+
+  } else if (verb === 'sudo') {
+    print([
+      ['white', '[sudo] password for zaid: '],
+      ['red',   'Sorry, try again.'],
+      ['red',   'zaid is not in the sudoers file. This incident will be reported.'],
+    ]);
+
+  } else if (verb === 'nmap') {
+    print([
+      ['green',  'Starting Nmap 7.94 ( https://nmap.org )'],
+      ['white',  'Nmap scan report for localhost (127.0.0.1)'],
+      ['white',  'Host is up (0.000025s latency).'],
+      ['', ''],
+      ['yellow', 'PORT     STATE  SERVICE  VERSION'],
+      ['green',  '22/tcp   open   ssh      OpenSSH 9.2p1'],
+      ['green',  '80/tcp   open   http     nginx 1.25.3'],
+      ['green',  '443/tcp  open   https    nginx 1.25.3'],
+      ['green',  '4444/tcp open   krb524?'],
+      ['', ''],
+      ['muted',  'Nmap done: 1 IP address (1 host up) scanned'],
+    ]);
+
+  } else if (verb === 'exit' || verb === 'logout') {
+    print([['muted', 'logout'], ['muted', 'Connection to kali closed.']]);
+
+  } else if (verb === 'echo') {
+    print([['white', parts.slice(1).join(' ')]]);
+
+  } else if (verb === 'date') {
+    print([['white', new Date().toString()]]);
+
+  } else {
+    print([
+      ['red',   'bash: ' + verb + ': command not found'],
+      ['muted', "type 'help' to see available commands"],
+    ]);
+  }
+}
+
+inp.addEventListener('keydown', e => {
+  if (e.key === 'Enter') {
+    runCmd(inp.value);
+    inp.value = '';
+  } else if (e.key === 'ArrowUp') {
+    e.preventDefault();
+    if (hIdx > 0) { hIdx--; inp.value = history[hIdx]; }
+  } else if (e.key === 'ArrowDown') {
+    e.preventDefault();
+    if (hIdx < history.length - 1) { hIdx++; inp.value = history[hIdx]; }
+    else { hIdx = history.length; inp.value = ''; }
+  } else if (e.key === 'Tab') {
+    e.preventDefault();
+    const val = inp.value;
+    const parts = val.split(/\s+/);
+    if (parts.length >= 2) {
+      const partial = parts[parts.length - 1];
+      const matches = tabCandidates().filter(f => f.startsWith(partial));
+      if (matches.length === 1) {
+        parts[parts.length - 1] = matches[0];
+        inp.value = parts.join(' ');
+      } else if (matches.length > 1) {
+        printPrompt(val);
+        const grid = document.createElement('div');
+        grid.className = 'ls-grid';
+        matches.forEach(m => {
+          const s = document.createElement('span');
+          s.className = 'ls-item ls-file';
+          s.textContent = m;
+          grid.appendChild(s);
+        });
+        out.appendChild(grid);
+        out.scrollTop = out.scrollHeight;
+      }
+    }
+  }
+});
+
+document.getElementById('termWrap').addEventListener('click', () => inp.focus());
+
+print([
+  ['green',  '  ____        _     _   ____            _   _           '],
+  ['green',  ' |_  /   __ _(_) __| | |  _ \\ __ _  __| |_| |__   __ _ _ __'],
+  ['green',  "  / /   / _\` | |/ _\` | | |_) / _\` |/ _\` | | '_ \\ / _\` | '_ \\"],
+  ['green',  ' / /_  | (_| | | (_| | |  __/ (_| | (_| | | | | | (_| | | | |'],
+  ['green',  '/____| _\\__,_|_|\\__,_| |_|   \\__,_|\\__,_|_|_| |_|\\__,_|_| |_|'],
+  ['', ''],
+  ['muted',  '──────────────────────────────────────────────────────────────'],
+  ['white',  '  Penetration Tester & Offensive Security Practitioner'],
+  ['muted',  '  Last login: ' + new Date().toDateString() + ' from 10.0.0.1'],
+  ['', ''],
+  ['yellow', "  type 'help' for available commands"],
+  ['', ''],
+]);
+
+inp.focus();
+</script>
+</body>
+</html>
