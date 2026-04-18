@@ -1,9 +1,6 @@
-<!-- Header -->
+markdown<!-- Header -->
 <div align="center">
-
-```
 zaid@kali:~/github/Pathanz $ whoami
-```
 
 # [ Zaid Pathan ]
 
@@ -63,12 +60,9 @@ Dual track: **penetration tester** + **SOC analyst**. Currently focused on web a
 > Grey-box pentest of a purposely vulnerable web app · *Kairos Sec / Hack Smarter Labs*
 
 Identified **26 vulnerabilities** across authentication, authorization, server-side, and client-side attack surfaces. Full professional report produced in SysReptor.
-
-```
 UNION SQLi · RCE via file upload · SSRF · SSTI · Path Traversal
 IDOR · Broken Access Control · Mass Assignment · Stored/Reflected XSS
 CSRF · Clickjacking · CORS Misconfiguration · Open Redirect
-```
 
 `Burp Suite` `Caido` `SQLMap` `Python` `SysReptor`
 
