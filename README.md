@@ -34,6 +34,14 @@ Cybersecurity practitioner with an MSc in Cybersecurity, working across both def
 <td>Real-time security monitoring, alert triage, and incident escalation.</td>
 </tr>
 <tr>
+<td><b>Service Technician</b><br><sub>London Drugs</sub><br><sub>Part-time, concurrent</sub></td>
+<td>Part-time technical service role alongside SOC operations work.</td>
+</tr>
+<tr>
+<td><b>IT Assistant</b><br><sub>NYIT Vancouver</sub><br><sub>2023 – 2024</sub></td>
+<td>IT support role held during graduate studies.</td>
+</tr>
+<tr>
 <td><b>MSS Security<br>Engineer</b><br><sub>Indusface Pvt. Ltd.</sub><br><sub>2022 – 2023</sub></td>
 <td>Burp Suite pentesting across the OWASP Top 10; WAF tuning that reduced false positives by ~90%; vulnerability triage for banking, e-commerce, and government clients. 200+ validated vulnerabilities across 120+ business-critical applications.</td>
 </tr>
@@ -87,7 +95,7 @@ Cybersecurity practitioner with an MSc in Cybersecurity, working across both def
 <div align="center">
 
 ![Security+](https://img.shields.io/badge/CompTIA_Security+-0A66C2?style=flat-square)
-![CyberOps](https://img.shields.io/badge/Cisco_CyberOps_Associate-0A66C2?style=flat-square)
+![A+](https://img.shields.io/badge/Cisco_CyberOps_Associate-0A66C2?style=flat-square)
 ![ISC2](https://img.shields.io/badge/ISC2_CC-0A66C2?style=flat-square)
 ![AWS](https://img.shields.io/badge/AWS_Cloud_Security_Foundations-0A66C2?style=flat-square)
 ![RMF](https://img.shields.io/badge/NIST_RMF_v2-0A66C2?style=flat-square)
