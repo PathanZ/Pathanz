@@ -95,7 +95,7 @@ Cybersecurity practitioner with an MSc in Cybersecurity, working across both def
 <div align="center">
 
 ![Security+](https://img.shields.io/badge/CompTIA_Security+-0A66C2?style=flat-square)
-![A+](https://img.shields.io/badge/Cisco_CyberOps_Associate-0A66C2?style=flat-square)
+![A+](https://img.shields.io/badge/CompTIA_A+-0A66C2?style=flat-square)
 ![ISC2](https://img.shields.io/badge/ISC2_CC-0A66C2?style=flat-square)
 ![AWS](https://img.shields.io/badge/AWS_Cloud_Security_Foundations-0A66C2?style=flat-square)
 ![RMF](https://img.shields.io/badge/NIST_RMF_v2-0A66C2?style=flat-square)
@@ -104,5 +104,3 @@ Cybersecurity practitioner with an MSc in Cybersecurity, working across both def
 ![SC-200](https://img.shields.io/badge/SC--200_(in_progress)-6E6E6E?style=flat-square)
 
 </div>
-
-<br>
