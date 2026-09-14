@@ -106,12 +106,3 @@ Cybersecurity practitioner with an MSc in Cybersecurity, working across both def
 </div>
 
 <br>
-
-## GitHub Activity
-
-<div align="center">
-
-<img src="https://github-readme-stats.vercel.app/api?username=PathanZ&show_icons=true&theme=default&hide_border=true&title_color=0A66C2&icon_color=0A66C2&text_color=333333" width="49%" />
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=PathanZ&layout=compact&hide_border=true&title_color=0A66C2&text_color=333333" width="35%" />
-
-</div>
