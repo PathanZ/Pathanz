@@ -22,7 +22,6 @@ Security operations practitioner with an MSc in Cybersecurity and hands-on exper
 
 - 🎯 Building detection content on **Microsoft Sentinel** — KQL detections mapped to MITRE ATT&CK, validated with Atomic Red Team, plus threat hunting
 - 📘 Working toward the **SC-200** (Security Operations Analyst)
-- 🏆 Top 10, CyberSci Regionals Vancouver 2024
 
 <br>
 
@@ -63,6 +62,18 @@ Security operations practitioner with an MSc in Cybersecurity and hands-on exper
 | **[threat-intel-feed-integrator](https://github.com/PathanZ/threat-intel-feed-integrator)** | IOC enrichment pipeline aggregating live threat intelligence feeds into a weighted risk score | `Python` `OTX` `VirusTotal` `AbuseIPDB` |
 | **[python-autorecon](https://github.com/PathanZ/python-autorecon)** | Modular recon tool automating Nmap, Whois, DNS, HTTP, subdomain enumeration, banner grabbing, and SSL analysis | `Python` `Nmap` |
 | **[mini-home-soc](https://github.com/PathanZ/mini-home-soc)** | 24/7 SOC sensor built on a repurposed Android device — no cloud, no VM | `Termux` `Bash` `Nmap` |
+
+<br>
+
+## Community
+
+Active in Vancouver's security community through regular meetups:
+
+- **DC604 (DEF CON Group Vancouver)**: technical talks on topics such as attack surface management and CTEM
+- **DMZ604**: IT/OT security meetup
+- **White-Hat Security Community (WSC)**: monthly cybersecurity coffee chats
+- **Hack The Box Meetup Vancouver**
+- 🏆 Top 10, CyberSci Regionals Vancouver 2024
 
 <br>
 
