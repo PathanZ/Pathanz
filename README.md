@@ -27,27 +27,27 @@ Security operations practitioner with an MSc in Cybersecurity and hands-on exper
 <table>
 <tr>
 <td width="220" valign="top"><b>Security Command<br>Centre Operator</b><br><sub>Strategic Defence Inc.<br>New Westminster, BC</sub><br><sub>May 2025 – Present</sub></td>
-<td>24/7 triage of alarm, camera, and access-control signals with escalation by severity. Wrote SOPs to standardize investigation and response across shifts.</td>
+<td><ul><li>Monitor a 24/7 alarm station and triage alarm, camera, and access-control signals</li><li>Escalate incidents to police, ambulance, or on-site guards based on severity</li><li>Review events for accuracy and write SOPs for investigation and escalation</li><li>Troubleshoot monitoring software, cameras, and access-control systems</li></ul></td>
 </tr>
 <tr>
 <td valign="top"><b>Service Technician</b><br><sub>London Drugs<br>Delta, BC</sub><br><sub>Feb 2025 – Present · Part-time</sub></td>
-<td>Malware removal, OS recovery, and security hardening on 100+ customer Windows devices.</td>
+<td><ul><li>Remove malware and recover infected Windows systems while keeping customer data safe</li><li>Install and harden Windows, drivers, and security software</li><li>Teach customers safe browsing, strong passwords, and phishing awareness</li></ul></td>
 </tr>
 <tr>
 <td valign="top"><b>IT Assistant</b><br><sub>NYIT<br>Vancouver, BC</sub><br><sub>Sep 2023 – Dec 2024</sub></td>
-<td>Triaged phishing emails and managed AD / Entra ID accounts (MFA, least privilege). Supported 500+ Windows and macOS endpoints in Microsoft 365.</td>
+<td><ul><li>Investigated suspected phishing emails and escalated real threats</li><li>Managed Active Directory and Entra ID accounts, MFA, and onboarding/offboarding</li><li>Resolved endpoint, login, DNS, and network issues through ServiceNow</li><li>Imaged and secured new devices before deployment</li></ul></td>
 </tr>
 <tr>
 <td valign="top"><b>MSS Security<br>Engineer</b><br><sub>Indusface Pvt. Ltd.<br>Vadodara, India</sub><br><sub>Mar 2022 – Apr 2023</sub></td>
-<td>Investigated 20–30 incidents/week for 30+ enterprise clients. Cut WAF false positives by ~80–90% and validated 200+ vulnerabilities with Burp Suite and PoC exploits.</td>
+<td><ul><li>Investigated security incidents using WAF alerts, web traffic, and application logs</li><li>Onboarded enterprise clients to the AppTrana WAF and integrated it with their SIEM</li><li>Tuned WAF policies, custom rules, and virtual patches to stop attacks and cut false positives</li><li>Pentested client web apps with Burp Suite to confirm vulnerabilities and guide fixes</li><li>Explained risks to client management and wrote security reports</li></ul></td>
 </tr>
 <tr>
 <td valign="top"><b>BreachPoint Intern</b><br><sub>Information Sharing &amp;<br>Analysis Center · Remote</sub><br><sub>Sep 2022 – Nov 2022</sub></td>
-<td>Recon and OWASP Top 10 assessments on authorized government web applications.</td>
+<td><ul><li>Mapped the attack surface of government web apps through recon and subdomain enumeration</li><li>Assessed apps for OWASP Top 10 issues and documented fixes</li></ul></td>
 </tr>
 <tr>
 <td valign="top"><b>Cybersecurity Intern</b><br><sub>TalaKunchi Networks<br>Remote</sub><br><sub>Jan 2021 – May 2021</sub></td>
-<td>VAPT engagements and data localization compliance audits at a CERT-In empanelled firm.</td>
+<td><ul><li>Supported VAPT engagements and documented vulnerabilities with remediation steps</li><li>Assisted data localization compliance audits</li></ul></td>
 </tr>
 </table>
 
