@@ -20,9 +20,6 @@
 
 Security operations practitioner with an MSc in Cybersecurity and hands-on experience across managed security services, incident investigation, phishing and email threat triage, and web application penetration testing. I've investigated incidents and validated 200+ vulnerabilities for 30+ enterprise clients in banking, e-commerce, and government, and I currently work in 24×7 real-time monitoring and escalation.
 
-- 🎯 Building detection content on **Microsoft Sentinel** — KQL detections mapped to MITRE ATT&CK, validated with Atomic Red Team, plus threat hunting
-- 📘 Working toward the **SC-200** (Security Operations Analyst)
-
 <br>
 
 ## Experience
@@ -122,7 +119,5 @@ Active in Vancouver's security community through regular meetups:
 ![RMF](https://img.shields.io/badge/NIST_RMF_v2-0A66C2?style=flat-square)
 ![PaloAlto](https://img.shields.io/badge/Palo_Alto_Cybersecurity_Fundamentals-0A66C2?style=flat-square)
 ![Kairos](https://img.shields.io/badge/Foundations_of_Web_App_Pentesting_(Kairos_Sec)-0A66C2?style=flat-square)
-<br>
-![SC-200](https://img.shields.io/badge/SC--200_(in_progress)-6E6E6E?style=flat-square)
 
 </div>
